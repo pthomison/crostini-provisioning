@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-VM_NAME=$1
+VM_NAME=penguin
+USERNAME=pthomison
 
 lxc launch images:fedora/31 $VM_NAME
 
 lxc exec $VM_NAME -- bash << 'EOLXC'
 set -x
 sleep 5
-
-USERNAME=pthomison
 
 dnf update -y
 
